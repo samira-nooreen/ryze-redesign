@@ -101,13 +101,17 @@ export default function PricingPage() {
               Our AI specialists can help you find the perfect plan for your current scale and growth goals.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button size="lg" className="h-14 px-10 text-lg font-semibold rounded-full group">
-                Compare Plans
-                <ArrowUpRight className="ml-2 h-5 w-5 group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
-              </Button>
-              <Button size="lg" variant="outline" className="h-14 px-10 text-lg font-semibold rounded-full border-2 transition-colors">
-                Book AI Ops Call
-              </Button>
+              <BookDemoModal>
+                <Button size="lg" className="h-14 px-10 text-lg font-semibold rounded-full group">
+                  Compare Plans
+                  <ArrowUpRight className="ml-2 h-5 w-5 group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
+                </Button>
+              </BookDemoModal>
+              <BookDemoModal>
+                <Button size="lg" variant="outline" className="h-14 px-10 text-lg font-semibold rounded-full border-2 transition-colors">
+                  Book AI Ops Call
+                </Button>
+              </BookDemoModal>
             </div>
           </div>
         </section>
