@@ -104,12 +104,15 @@ export function PricingCards() {
                 ))}
               </ul>
 
-              <Button
-                variant={tier.popular ? "secondary" : "outline"}
-                className="h-14 text-lg font-semibold rounded-full"
-              >
-                {tier.cta}
-              </Button>
+              <BookDemoModal>
+                <Button
+                  variant={tier.popular ? "secondary" : "outline"}
+                  className="h-14 text-lg font-semibold rounded-full w-full"
+                >
+                  {tier.cta}
+                </Button>
+              </BookDemoModal>
+
             </motion.div>
           ))}
         </div>
