@@ -19,32 +19,32 @@ export function Navbar() {
     <nav className="fixed top-0 left-0 right-0 z-50 border-b border-border/50 bg-background/50 backdrop-blur-xl">
       <div className="mx-auto max-w-[1400px] px-6 lg:px-12">
         <div className="flex h-20 items-center justify-between">
-          <div className="flex items-center">
-            <Link href="/" className="flex items-center gap-3 group">
-              <div className="relative flex h-10 w-10 items-center justify-center rounded-xl bg-primary text-primary-foreground overflow-hidden">
-                <div className="absolute inset-0 bg-white/20 translate-y-full group-hover:translate-y-0 transition-transform duration-300" />
-                <Zap className="relative h-6 w-6 fill-current" />
-              </div>
-              <span className="text-2xl font-display font-black tracking-tight uppercase italic">Ryze</span>
-            </Link>
-          </div>
-
-          <div className="hidden md:flex items-center gap-12">
-            <div className="flex items-center gap-8">
-              {navLinks.map((link) => (
-                <Link
-                  key={link.name}
-                  href={link.href}
-                  className="text-sm font-bold uppercase tracking-widest text-muted-foreground hover:text-primary transition-colors"
-                >
-                  {link.name}
-                </Link>
-              ))}
+            <div className="flex items-center">
+              <Link href="/" className="flex items-center gap-3 group">
+                <div className="relative flex h-10 w-10 items-center justify-center rounded-xl bg-primary text-primary-foreground overflow-hidden">
+                  <div className="absolute inset-0 bg-white/20 translate-y-full group-hover:translate-y-0 transition-transform duration-300" />
+                  <Zap className="relative h-5 w-5 fill-current" />
+                </div>
+                <span className="text-xl font-display font-bold tracking-tight">Ryze</span>
+              </Link>
             </div>
-            <Button size="lg" className="rounded-none px-8 font-black uppercase italic tracking-tighter hover:scale-105 transition-transform">
-              Book a Demo
-            </Button>
-          </div>
+
+            <div className="hidden md:flex items-center gap-12">
+              <div className="flex items-center gap-8">
+                {navLinks.map((link) => (
+                  <Link
+                    key={link.name}
+                    href={link.href}
+                    className="text-sm font-medium text-muted-foreground hover:text-primary transition-colors"
+                  >
+                    {link.name}
+                  </Link>
+                ))}
+              </div>
+              <Button className="rounded-full px-6 font-semibold transition-all">
+                Book a Demo
+              </Button>
+            </div>
 
           <div className="flex md:hidden">
             <button
