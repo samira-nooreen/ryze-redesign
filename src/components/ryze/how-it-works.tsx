@@ -28,20 +28,20 @@ export function HowItWorks() {
   ];
 
   return (
-    <section id="how-it-works" className="py-32 px-6 lg:px-12 bg-secondary/30 relative">
+    <section id="how-it-works" className="py-32 px-6 lg:px-12 bg-muted/30 relative">
       <div className="mx-auto max-w-[1400px]">
-        <div className="mb-24">
-          <div className="flex items-center gap-4 mb-6">
-            <Zap className="h-6 w-6 text-primary fill-current" />
-            <span className="text-sm font-black uppercase tracking-[0.2em]">The Pipeline</span>
+        <div className="mb-24 text-center">
+          <div className="flex items-center justify-center gap-4 mb-6">
+            <div className="h-px w-8 bg-primary" />
+            <span className="text-sm font-semibold uppercase tracking-[0.1em] text-primary">The Process</span>
+            <div className="h-px w-8 bg-primary" />
           </div>
-          <h2 className="text-5xl md:text-7xl font-black uppercase italic tracking-tighter leading-none">
-            From Audit <br />
-            To <span className="text-primary">Autonomy</span>
+          <h2 className="text-4xl md:text-6xl font-bold tracking-tight leading-none">
+            From Audit to <span className="text-primary">Autonomy</span>
           </h2>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-px bg-border border border-border">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           {steps.map((step, i) => (
             <motion.div
               key={i}
@@ -49,20 +49,20 @@ export function HowItWorks() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: i * 0.1 }}
-              className="bg-background p-12 relative group overflow-hidden"
+              className="relative p-8 rounded-3xl bg-background border border-border group hover:border-primary/50 transition-all duration-300"
             >
-              <div className="absolute top-0 right-0 p-8 text-8xl font-black text-foreground/5 italic group-hover:text-primary/10 transition-colors">
-                {i + 1}
+              <div className="absolute top-4 right-6 text-6xl font-bold text-foreground/[0.03] group-hover:text-primary/[0.05] transition-colors">
+                0{i + 1}
               </div>
               
               <div className="relative z-10">
-                <div className="h-14 w-14 bg-primary text-primary-foreground flex items-center justify-center mb-12">
-                  <step.icon className="h-8 w-8" />
+                <div className="h-12 w-12 bg-primary/10 text-primary rounded-xl flex items-center justify-center mb-8 group-hover:bg-primary group-hover:text-primary-foreground transition-colors duration-300">
+                  <step.icon className="h-6 w-6" />
                 </div>
-                <h3 className="text-3xl font-black uppercase italic tracking-tight mb-6">
+                <h3 className="text-xl font-bold tracking-tight mb-4">
                   {step.title}
                 </h3>
-                <p className="text-muted-foreground font-medium leading-relaxed">
+                <p className="text-sm text-muted-foreground font-medium leading-relaxed">
                   {step.description}
                 </p>
               </div>
