@@ -6,6 +6,7 @@ import { motion } from "framer-motion";
 import { Menu, X, Zap } from "lucide-react";
 import { useState } from "react";
 
+// Muted navbar
 export function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
 
