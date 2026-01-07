@@ -4,8 +4,8 @@ import { HowItWorks } from "@/components/ryze/how-it-works";
 import { Testimonials } from "@/components/ryze/testimonials";
 import { PricingCards } from "@/components/ryze/pricing-cards";
 import { Button } from "@/components/ui/button";
-import { ArrowUpRight } from "lucide-react";
-import { Zap } from "lucide-react";
+import { ArrowUpRight, Zap } from "lucide-react";
+import { BookDemoModal } from "@/components/ryze/book-demo-modal";
 
 // Force refresh for HMR consistency
 export default function Home() {
@@ -35,13 +35,17 @@ export default function Home() {
               </p>
               
               <div className="flex flex-col sm:flex-row gap-4">
-                <Button size="lg" className="h-14 px-10 text-lg font-semibold rounded-full group">
-                  Get Free Audit
-                  <ArrowUpRight className="ml-2 h-5 w-5 group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
-                </Button>
-                <Button size="lg" variant="outline" className="h-14 px-10 text-lg font-semibold rounded-full border-border hover:bg-background transition-colors">
-                  Talk to Sales
-                </Button>
+                <BookDemoModal>
+                  <Button size="lg" className="h-14 px-10 text-lg font-semibold rounded-full group">
+                    Get Free Audit
+                    <ArrowUpRight className="ml-2 h-5 w-5 group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
+                  </Button>
+                </BookDemoModal>
+                <BookDemoModal>
+                  <Button size="lg" variant="outline" className="h-14 px-10 text-lg font-semibold rounded-full border-border hover:bg-background transition-colors">
+                    Talk to Sales
+                  </Button>
+                </BookDemoModal>
               </div>
             </div>
           </div>
