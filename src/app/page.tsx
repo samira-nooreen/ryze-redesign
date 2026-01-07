@@ -7,6 +7,7 @@ import { Button } from "@/components/ui/button";
 import { ArrowUpRight } from "lucide-react";
 import { Zap } from "lucide-react";
 
+// Force refresh for HMR consistency
 export default function Home() {
   return (
     <div className="flex flex-col gap-0 overflow-hidden">
