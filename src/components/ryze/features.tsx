@@ -49,42 +49,46 @@ export function Features() {
       
       <div className="mx-auto max-w-[1400px]">
         <div className="flex flex-col lg:flex-row justify-between items-end gap-12 mb-24">
-          <div className="max-w-2xl">
-            <div className="flex items-center gap-4 mb-6">
-              <Zap className="h-6 w-6 text-primary fill-current" />
-              <span className="text-sm font-black uppercase tracking-[0.2em]">The Toolkit</span>
-            </div>
-            <h2 className="text-5xl md:text-7xl font-black uppercase italic tracking-tighter leading-none">
-              Built for <br />
-              <span className="text-primary">Performance</span>
-            </h2>
-          </div>
-          <p className="text-xl text-muted-foreground max-w-md font-medium leading-tight">
-            Traditional agencies are too slow. Ryze is the autonomous layer that outpaces the market.
-          </p>
-        </div>
-
-        <div className="grid grid-cols-1 md:grid-cols-12 gap-4 auto-rows-[240px]">
-          {features.map((feature, i) => (
-            <motion.div
-              key={i}
-              initial={{ opacity: 0, scale: 0.95 }}
-              whileInView={{ opacity: 1, scale: 1 }}
-              viewport={{ once: true }}
-              transition={{ delay: i * 0.05 }}
-              className={`relative p-8 overflow-hidden group ${feature.className}`}
-            >
-              <div className="flex flex-col h-full justify-between relative z-10">
-                <feature.icon className={`h-10 w-10 ${feature.className.includes('bg-primary') ? 'text-primary-foreground' : 'text-primary'}`} />
-                <div>
-                  <h3 className={`text-2xl font-black uppercase italic tracking-tight mb-2 ${feature.className.includes('bg-primary') ? 'text-primary-foreground' : ''}`}>
-                    {feature.title}
-                  </h3>
-                  <p className={`text-sm font-medium leading-tight ${feature.className.includes('bg-primary') ? 'text-primary-foreground/80' : 'text-muted-foreground'}`}>
-                    {feature.description}
-                  </p>
+            <div className="max-w-2xl">
+              <div className="flex items-center gap-4 mb-6">
+                <div className="h-10 w-10 flex items-center justify-center rounded-xl bg-primary/10 text-primary">
+                  <Zap className="h-6 w-6 fill-current" />
                 </div>
+                <span className="text-sm font-semibold uppercase tracking-[0.1em] text-primary">Capabilities</span>
               </div>
+              <h2 className="text-4xl md:text-6xl font-bold tracking-tight leading-none mb-6">
+                Engineered for <br />
+                <span className="text-primary">Exponential Growth</span>
+              </h2>
+            </div>
+            <p className="text-lg text-muted-foreground max-w-md font-medium leading-relaxed">
+              Move beyond manual optimization. Ryze provides the autonomous infrastructure to outpace your competition.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-12 gap-6 auto-rows-[280px]">
+            {features.map((feature, i) => (
+              <motion.div
+                key={i}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: i * 0.05 }}
+                className={`relative p-8 rounded-3xl overflow-hidden group transition-all duration-300 hover:shadow-2xl hover:shadow-primary/5 ${feature.className} ${feature.className.includes('bg-background') ? 'hover:border-primary/50' : ''}`}
+              >
+                <div className="flex flex-col h-full justify-between relative z-10">
+                  <div className={`h-12 w-12 flex items-center justify-center rounded-2xl ${feature.className.includes('bg-primary') ? 'bg-white/20' : 'bg-primary/10'}`}>
+                    <feature.icon className={`h-6 w-6 ${feature.className.includes('bg-primary') ? 'text-primary-foreground' : 'text-primary'}`} />
+                  </div>
+                  <div>
+                    <h3 className={`text-xl font-bold tracking-tight mb-3 ${feature.className.includes('bg-primary') ? 'text-primary-foreground' : ''}`}>
+                      {feature.title}
+                    </h3>
+                    <p className={`text-sm font-medium leading-relaxed ${feature.className.includes('bg-primary') ? 'text-primary-foreground/80' : 'text-muted-foreground'}`}>
+                      {feature.description}
+                    </p>
+                  </div>
+                </div>
               
               {/* Decorative detail */}
               <div className="absolute top-4 right-4 text-[10px] font-black opacity-20 uppercase tracking-widest">
