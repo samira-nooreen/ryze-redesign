@@ -2,13 +2,9 @@
 
 import { Button } from "@/components/ui/button";
 import { motion, useScroll, useTransform } from "framer-motion";
-import { ArrowUpRight } from "lucide-react";
-import { Zap } from "lucide-react";
-import { Play } from "lucide-react";
-import { Globe } from "lucide-react";
-import { Shield } from "lucide-react";
-import { BarChart3 } from "lucide-react";
+import { ArrowUpRight, Zap, Play, Globe, Shield, BarChart3 } from "lucide-react";
 import { useRef } from "react";
+import { BookDemoModal } from "./book-demo-modal";
 
 export function Hero() {
   const containerRef = useRef<HTMLDivElement>(null);
