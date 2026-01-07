@@ -107,10 +107,13 @@ export default function FeaturesPage() {
                       ))}
                     </div>
 
-                    <Button size="lg" className="h-14 px-10 text-lg font-semibold rounded-full group">
-                      Learn More
-                      <ArrowUpRight className="ml-2 h-5 w-5 group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
-                    </Button>
+                      <BookDemoModal>
+                        <Button size="lg" className="h-14 px-10 text-lg font-semibold rounded-full group">
+                          Learn More
+                          <ArrowUpRight className="ml-2 h-5 w-5 group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
+                        </Button>
+                      </BookDemoModal>
+
                   </div>
 
                   <div className="lg:col-span-5 flex items-center justify-center mt-12 lg:mt-0">
