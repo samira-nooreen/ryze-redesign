@@ -130,22 +130,25 @@ function ChartTooltipContent({
   const { config } = useChart()
 
   const tooltipLabel = React.useMemo(() => {
-    if (hideLabel || !payload?.length) {
+    const tooltipPayload = payload || (props as any).payload
+    const tooltipLabel = label || (props as any).label
+
+    if (hideLabel || !tooltipPayload?.length) {
       return null
     }
 
-    const [item] = payload
+    const [item] = tooltipPayload
     const key = `${labelKey || item?.dataKey || item?.name || "value"}`
     const itemConfig = getPayloadConfigFromPayload(config, item, key)
     const value =
-      !labelKey && typeof label === "string"
-        ? config[label as keyof typeof config]?.label || label
+      !labelKey && typeof tooltipLabel === "string"
+        ? config[tooltipLabel as keyof typeof config]?.label || tooltipLabel
         : itemConfig?.label
 
     if (labelFormatter) {
       return (
         <div className={cn("font-medium", labelClassName)}>
-          {labelFormatter(value, payload)}
+          {labelFormatter(value, tooltipPayload)}
         </div>
       )
     }
@@ -163,6 +166,7 @@ function ChartTooltipContent({
     labelClassName,
     config,
     labelKey,
+    props,
   ])
 
   if (!active || !payload?.length) {
