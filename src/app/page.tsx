@@ -16,10 +16,10 @@ export default function Home() {
       <PricingCards />
       
       {/* Final CTA Section */}
-      <section className="py-32 px-6 lg:px-12 bg-muted/30 relative">
+      <section className="py-32 px-6 lg:px-12 bg-background relative border-t border-border">
         <div className="mx-auto max-w-[1400px]">
-          <div className="relative rounded-3xl bg-primary p-12 md:p-24 overflow-hidden text-primary-foreground">
-            <div className="absolute top-0 right-0 p-8 opacity-20">
+          <div className="relative rounded-2xl bg-secondary p-12 md:p-24 overflow-hidden">
+            <div className="absolute top-0 right-0 p-8 opacity-5">
               <Zap className="h-24 w-24 fill-current" />
             </div>
             
@@ -28,16 +28,16 @@ export default function Home() {
                 Ready to Scale Your <br />
                 Ad Operations?
               </h2>
-              <p className="text-lg md:text-xl text-primary-foreground/80 font-medium mb-12 max-w-xl">
+              <p className="text-lg md:text-xl text-muted-foreground font-medium mb-12 max-w-xl">
                 Join 230+ companies using Ryze AI to automate their growth. Get your autonomous audit today.
               </p>
               
               <div className="flex flex-col sm:flex-row gap-4">
-                <Button size="lg" variant="secondary" className="h-14 px-10 text-lg font-semibold rounded-full group">
+                <Button size="lg" className="h-14 px-10 text-lg font-semibold rounded-full group">
                   Get Free Audit
                   <ArrowUpRight className="ml-2 h-5 w-5 group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
                 </Button>
-                <Button size="lg" variant="outline" className="h-14 px-10 text-lg font-semibold rounded-full border-primary-foreground/20 hover:bg-primary-foreground hover:text-primary transition-colors">
+                <Button size="lg" variant="outline" className="h-14 px-10 text-lg font-semibold rounded-full border-border hover:bg-background transition-colors">
                   Talk to Sales
                 </Button>
               </div>
