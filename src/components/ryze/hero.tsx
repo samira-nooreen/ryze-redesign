@@ -1,70 +1,113 @@
 "use client";
 
 import { Button } from "@/components/ui/button";
-import { motion } from "framer-motion";
-import { ArrowRight, Play, TrendingUp, ShieldCheck, Zap } from "lucide-react";
-import Image from "next/image";
+import { motion, useScroll, useTransform } from "framer-motion";
+import { ArrowUpRight, Zap, Play, Globe, Shield, BarChart3 } from "lucide-react";
+import { useRef } from "react";
 
 export function Hero() {
+  const containerRef = useRef<HTMLDivElement>(null);
+  const { scrollYProgress } = useScroll({
+    target: containerRef,
+    offset: ["start start", "end start"],
+  });
+
+  const y = useTransform(scrollYProgress, [0, 1], [0, 200]);
+  const opacity = useTransform(scrollYProgress, [0, 0.5], [1, 0]);
+
   return (
-    <section className="relative overflow-hidden py-24 px-4 sm:px-6 lg:px-8">
-      {/* Background Mesh */}
-      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full h-full -z-10 opacity-30 dark:opacity-20 pointer-events-none">
-        <div className="absolute top-[-10%] left-[-10%] w-[40%] h-[40%] bg-primary rounded-full blur-[120px]" />
-        <div className="absolute bottom-[10%] right-[-5%] w-[30%] h-[30%] bg-indigo-500 rounded-full blur-[100px]" />
-      </div>
-
-      <div className="mx-auto max-w-7xl">
-        <div className="text-center">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5 }}
-          >
-            <span className="inline-flex items-center gap-2 rounded-full border border-primary/20 bg-primary/5 px-4 py-1.5 text-sm font-medium text-primary mb-8">
-              <Zap className="h-4 w-4 fill-current" />
-              Autonomous AI Ad Management
-            </span>
-            <h1 className="text-5xl md:text-7xl font-bold tracking-tight mb-8 bg-clip-text text-transparent bg-gradient-to-b from-foreground to-foreground/70">
-              Ryze Above the <br /> 
-              <span className="text-primary">Ad Noise</span>
-            </h1>
-            <p className="mx-auto max-w-2xl text-lg md:text-xl text-muted-foreground mb-10 leading-relaxed">
-              Empower your marketing team with the world&apos;s first autonomous AI that manages ads across ChatGPT, Perplexity, Google, and Meta.
-            </p>
-            <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-              <Button size="lg" className="rounded-full px-8 h-14 text-lg group">
-                Get Free Ad Audit
-                <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
-              </Button>
-              <Button size="lg" variant="outline" className="rounded-full px-8 h-14 text-lg group">
-                <Play className="mr-2 h-5 w-5 fill-current" />
-                Watch Demo
-              </Button>
-            </div>
-          </motion.div>
-
-          {/* Social Proof / Stats */}
-          <motion.div
-            initial={{ opacity: 0, y: 40 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.2 }}
-            className="mt-20 grid grid-cols-1 md:grid-cols-3 gap-8 max-w-4xl mx-auto"
-          >
-            {[
-              { icon: TrendingUp, label: "Managed Ad Spend", value: "$50M+" },
-              { icon: ShieldCheck, label: "Active Customers", value: "230+" },
-              { icon: Zap, label: "Optimization Speed", value: "24/7" },
-            ].map((stat, i) => (
-              <div key={i} className="flex flex-col items-center p-6 rounded-2xl border border-white/5 bg-white/5 backdrop-blur-sm">
-                <stat.icon className="h-8 w-8 text-primary mb-4" />
-                <span className="text-3xl font-bold mb-1">{stat.value}</span>
-                <span className="text-sm text-muted-foreground">{stat.label}</span>
+    <section ref={containerRef} className="relative min-h-[100vh] flex flex-col justify-center overflow-hidden pt-20">
+      {/* Background Elements */}
+      <div className="absolute inset-0 noise pointer-events-none" />
+      <div className="absolute inset-0 glow-mesh pointer-events-none" />
+      
+      <div className="mx-auto max-w-[1400px] px-6 lg:px-12 w-full">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-end">
+          <div className="lg:col-span-8">
+            <motion.div
+              initial={{ opacity: 0, y: 50 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
+            >
+              <div className="flex items-center gap-4 mb-8">
+                <div className="h-px w-12 bg-primary" />
+                <span className="text-xs font-black uppercase tracking-[0.3em] text-primary">
+                  Autonomous Ad Operations
+                </span>
               </div>
-            ))}
-          </motion.div>
+              
+              <h1 className="text-[clamp(3rem,8vw,7.5rem)] leading-[0.85] font-black uppercase italic tracking-tighter mb-12">
+                Ryze <br />
+                <span className="text-primary">Above</span> <br />
+                The Noise.
+              </h1>
+            </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0, x: -20 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.8, delay: 0.2 }}
+              className="flex flex-wrap gap-6"
+            >
+              <Button size="lg" className="h-20 px-12 text-2xl font-black uppercase italic tracking-tighter rounded-none group">
+                Start Audit
+                <ArrowUpRight className="ml-2 h-6 w-6 group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
+              </Button>
+              <Button size="lg" variant="outline" className="h-20 px-12 text-2xl font-black uppercase italic tracking-tighter rounded-none border-2 hover:bg-foreground hover:text-background transition-colors">
+                View Demo
+              </Button>
+            </motion.div>
+          </div>
+
+          <div className="lg:col-span-4 lg:mb-12">
+            <motion.p 
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ duration: 1, delay: 0.4 }}
+              className="text-xl md:text-2xl text-muted-foreground font-medium leading-tight mb-8"
+            >
+              The world&apos;s first autonomous AI that manages ads across ChatGPT, Perplexity, Google, and Meta.
+            </motion.p>
+            
+            <motion.div 
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.6 }}
+              className="flex flex-col gap-4 border-l-4 border-primary pl-6"
+            >
+              <div className="flex items-center gap-3">
+                <Globe className="h-5 w-5 text-primary" />
+                <span className="text-sm font-bold uppercase tracking-wider">Multi-Platform Mastery</span>
+              </div>
+              <div className="flex items-center gap-3">
+                <Shield className="h-5 w-5 text-primary" />
+                <span className="text-sm font-bold uppercase tracking-wider">Secure Data Pipeline</span>
+              </div>
+              <div className="flex items-center gap-3">
+                <BarChart3 className="h-5 w-5 text-primary" />
+                <span className="text-sm font-bold uppercase tracking-wider">Real-time Optimization</span>
+              </div>
+            </motion.div>
+          </div>
         </div>
       </div>
+
+      {/* Floating UI Elements / Stats */}
+      <motion.div 
+        style={{ y, opacity }}
+        className="absolute bottom-20 right-[-10%] hidden xl:block w-[400px] h-[300px] border-2 border-border bg-background/80 backdrop-blur-xl p-8"
+      >
+        <div className="flex justify-between items-start mb-12">
+          <div className="p-3 bg-primary text-primary-foreground">
+            <Zap className="h-8 w-8 fill-current" />
+          </div>
+          <span className="text-xs font-black uppercase tracking-widest opacity-50">Live Sync</span>
+        </div>
+        <div className="space-y-2">
+          <span className="text-sm font-bold uppercase text-muted-foreground">Managed Spend</span>
+          <div className="text-6xl font-black italic tracking-tighter">$50M+</div>
+        </div>
+      </motion.div>
     </section>
   );
 }
