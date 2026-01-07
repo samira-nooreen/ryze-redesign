@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { Zap, Twitter, Linkedin, Github } from "lucide-react";
+import { BookDemoModal } from "../ryze/book-demo-modal";
 
 export function Footer() {
   return (
