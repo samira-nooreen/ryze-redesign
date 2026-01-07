@@ -132,7 +132,7 @@ export default function FeaturesPage() {
         </section>
 
         {/* Integration Grid */}
-        <section className="py-32 px-6 lg:px-12 bg-muted/30 relative">
+        <section id="integrations" className="py-32 px-6 lg:px-12 bg-muted/30 relative">
           <div className="absolute top-0 left-0 w-full h-px bg-border" />
           <div className="mx-auto max-w-[1400px]">
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-24 items-center">
