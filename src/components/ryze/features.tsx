@@ -74,12 +74,12 @@ export function Features() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: i * 0.05 }}
-                className={`relative p-8 rounded-3xl overflow-hidden group transition-all duration-300 hover:shadow-2xl hover:shadow-primary/5 ${feature.className} ${feature.className.includes('bg-background') ? 'hover:border-primary/50' : ''}`}
-              >
-                <div className="flex flex-col h-full justify-between relative z-10">
-                  <div className={`h-12 w-12 flex items-center justify-center rounded-2xl ${feature.className.includes('bg-primary') ? 'bg-white/20' : 'bg-primary/10'}`}>
-                    <feature.icon className={`h-6 w-6 ${feature.className.includes('bg-primary') ? 'text-primary-foreground' : 'text-primary'}`} />
-                  </div>
+                  className={`relative p-8 rounded-2xl overflow-hidden group transition-all duration-300 ${feature.className} ${feature.className.includes('bg-background') ? 'hover:border-foreground/20' : ''}`}
+                >
+                  <div className="flex flex-col h-full justify-between relative z-10">
+                    <div className={`h-10 w-10 flex items-center justify-center rounded-xl ${feature.className.includes('bg-primary') ? 'bg-white/10' : 'bg-secondary'}`}>
+                      <feature.icon className={`h-5 w-5 ${feature.className.includes('bg-primary') ? 'text-primary-foreground' : 'text-foreground'}`} />
+                    </div>
                   <div>
                     <h3 className={`text-xl font-bold tracking-tight mb-3 ${feature.className.includes('bg-primary') ? 'text-primary-foreground' : ''}`}>
                       {feature.title}
