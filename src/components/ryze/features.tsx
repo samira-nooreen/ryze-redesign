@@ -1,7 +1,13 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Search, Sparkles, BarChart3, AlertCircle, RefreshCw, Target, Zap } from "lucide-react";
+import { Search } from "lucide-react";
+import { Sparkles } from "lucide-react";
+import { BarChart3 } from "lucide-react";
+import { AlertCircle } from "lucide-react";
+import { RefreshCw } from "lucide-react";
+import { Target } from "lucide-react";
+import { Zap } from "lucide-react";
 
 export function Features() {
   const features = [
