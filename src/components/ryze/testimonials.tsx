@@ -27,20 +27,16 @@ export function Testimonials() {
   ];
 
   return (
-    <section className="py-32 px-6 lg:px-12 bg-background relative overflow-hidden">
-      <div className="absolute top-0 left-0 w-full h-px bg-border" />
-      
+    <section className="py-32 px-6 lg:px-12 bg-background relative overflow-hidden border-t border-border">
       <div className="mx-auto max-w-[1400px]">
         <div className="flex flex-col lg:flex-row justify-between items-end gap-12 mb-24">
             <div className="max-w-2xl">
               <div className="flex items-center gap-4 mb-6">
-                <div className="h-10 w-10 flex items-center justify-center rounded-xl bg-primary/10 text-primary">
-                  <Zap className="h-6 w-6 fill-current" />
-                </div>
-                <span className="text-sm font-semibold uppercase tracking-[0.1em] text-primary">Social Proof</span>
+                <div className="h-px w-8 bg-border" />
+                <span className="text-xs font-semibold uppercase tracking-[0.1em] text-muted-foreground">Social Proof</span>
               </div>
               <h2 className="text-4xl md:text-6xl font-bold tracking-tight leading-none">
-                Loved by <span className="text-primary">Ops Teams</span>
+                Loved by <span className="text-muted-foreground/40">Ops Teams</span>
               </h2>
             </div>
           </div>
@@ -53,21 +49,21 @@ export function Testimonials() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: i * 0.1 }}
-                className="relative p-10 rounded-3xl bg-muted/30 border border-border hover:border-primary/50 transition-all group"
+                className="relative p-10 rounded-2xl bg-secondary border border-border/50 hover:border-foreground/20 transition-all group"
               >
-                <Quote className="h-10 w-10 text-primary/40 mb-8" />
+                <Quote className="h-8 w-8 text-muted-foreground/20 mb-8" />
                 <p className="text-xl font-medium leading-relaxed mb-12">
                   &ldquo;{t.content}&rdquo;
                 </p>
                 
                 <div className="flex items-center gap-4">
-                  <Avatar className="h-12 w-12 border-2 border-background">
+                  <Avatar className="h-10 w-10 border border-border">
                     <AvatarImage src={t.image} alt={t.name} />
-                    <AvatarFallback className="bg-primary text-primary-foreground font-bold">{t.name[0]}</AvatarFallback>
+                    <AvatarFallback className="bg-muted text-muted-foreground font-bold">{t.name[0]}</AvatarFallback>
                   </Avatar>
                   <div>
                     <div className="font-bold tracking-tight">{t.name}</div>
-                    <div className="text-sm font-medium text-muted-foreground">{t.role}</div>
+                    <div className="text-xs font-medium text-muted-foreground uppercase tracking-wider">{t.role}</div>
                   </div>
                 </div>
               </motion.div>
