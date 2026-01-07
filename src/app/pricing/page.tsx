@@ -9,7 +9,7 @@ import {
   AccordionTrigger,
 } from "@/components/ui/accordion";
 import { Button } from "@/components/ui/button";
-import { ArrowRight, HelpCircle } from "lucide-react";
+import { ArrowUpRight, HelpCircle, Zap } from "lucide-react";
 
 export default function PricingPage() {
   const faqs = [
@@ -32,20 +32,28 @@ export default function PricingPage() {
   ];
 
   return (
-    <div className="flex flex-col">
+    <div className="flex flex-col overflow-hidden">
       {/* Hero Header */}
-      <section className="py-24 px-4 sm:px-6 lg:px-8 border-b border-border bg-muted/20">
-        <div className="mx-auto max-w-7xl text-center">
-          <motion.h1 
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            className="text-4xl md:text-6xl font-bold mb-6"
-          >
-            Transparent <span className="text-primary">Pricing</span>
-          </motion.h1>
-          <p className="text-muted-foreground text-xl max-w-3xl mx-auto">
-            Scale your advertising performance with predictable costs and a massive ROI.
-          </p>
+      <section className="py-32 px-6 lg:px-12 bg-background relative overflow-hidden">
+        <div className="absolute inset-0 noise pointer-events-none" />
+        <div className="mx-auto max-w-[1400px]">
+          <div className="flex flex-col lg:flex-row justify-between items-end gap-12">
+            <div className="max-w-4xl">
+              <div className="flex items-center gap-4 mb-8">
+                <div className="h-px w-12 bg-primary" />
+                <span className="text-xs font-black uppercase tracking-[0.3em] text-primary">
+                  Investment Strategy
+                </span>
+              </div>
+              <h1 className="text-[clamp(3rem,8vw,6rem)] leading-[0.85] font-black uppercase italic tracking-tighter">
+                Predictable <br />
+                <span className="text-primary">Performance</span>
+              </h1>
+            </div>
+            <p className="text-xl md:text-2xl text-muted-foreground font-medium max-w-md leading-tight mb-4">
+              Scale your advertising performance with flat fees and massive ROI. No percentages, no surprises.
+            </p>
+          </div>
         </div>
       </section>
 
@@ -53,23 +61,26 @@ export default function PricingPage() {
       <PricingCards />
 
       {/* FAQ Section */}
-      <section className="py-24 px-4 sm:px-6 lg:px-8">
-        <div className="mx-auto max-w-3xl">
-          <div className="text-center mb-16">
-            <HelpCircle className="h-12 w-12 text-primary mx-auto mb-4" />
-            <h2 className="text-3xl font-bold mb-4">Frequently Asked Questions</h2>
-            <p className="text-muted-foreground">
-              Everything you need to know about Ryze AI and our pricing.
-            </p>
+      <section className="py-32 px-6 lg:px-12 border-t border-border bg-background">
+        <div className="mx-auto max-w-4xl">
+          <div className="mb-24">
+            <div className="flex items-center gap-4 mb-6">
+              <Zap className="h-6 w-6 text-primary fill-current" />
+              <span className="text-sm font-black uppercase tracking-[0.2em]">The Intel</span>
+            </div>
+            <h2 className="text-5xl md:text-7xl font-black uppercase italic tracking-tighter leading-none">
+              Common <br />
+              <span className="text-primary">Questions</span>
+            </h2>
           </div>
 
-          <Accordion type="single" collapsible className="w-full">
+          <Accordion type="single" collapsible className="w-full space-y-4">
             {faqs.map((faq, i) => (
-              <AccordionItem key={i} value={`item-${i}`}>
-                <AccordionTrigger className="text-left font-semibold">
+              <AccordionItem key={i} value={`item-${i}`} className="border-4 border-foreground px-8 py-4 bg-background hover:bg-secondary/20 transition-colors">
+                <AccordionTrigger className="text-xl font-black uppercase italic italic tracking-tight hover:no-underline">
                   {faq.question}
                 </AccordionTrigger>
-                <AccordionContent className="text-muted-foreground leading-relaxed">
+                <AccordionContent className="text-lg font-medium text-muted-foreground leading-tight pt-4">
                   {faq.answer}
                 </AccordionContent>
               </AccordionItem>
@@ -79,20 +90,29 @@ export default function PricingPage() {
       </section>
 
       {/* Final Comparison CTA */}
-      <section className="py-24 px-4 sm:px-6 lg:px-8 bg-muted/30 border-t border-border">
-        <div className="mx-auto max-w-7xl text-center">
-          <h2 className="text-3xl font-bold mb-8">Not sure which plan is right?</h2>
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-            <Button size="lg" className="rounded-full px-8 group">
-              Compare All Features
-              <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
-            </Button>
-            <Button size="lg" variant="outline" className="rounded-full px-8">
-              Speak to an Expert
-            </Button>
+      <section className="py-32 px-6 lg:px-12 bg-primary text-primary-foreground relative overflow-hidden">
+        <div className="mx-auto max-w-[1400px] relative z-10">
+          <div className="flex flex-col lg:flex-row items-center justify-between gap-12 text-center lg:text-left">
+            <h2 className="text-5xl md:text-7xl font-black uppercase italic tracking-tighter leading-none">
+              Not Sure <br />
+              <span className="text-primary-foreground/50">Where to Start?</span>
+            </h2>
+            <div className="flex flex-col sm:flex-row gap-6">
+              <Button size="lg" variant="secondary" className="h-20 px-12 text-2xl font-black uppercase italic tracking-tighter rounded-none group">
+                Compare Plans
+                <ArrowUpRight className="ml-2 h-6 w-6 group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
+              </Button>
+              <Button size="lg" variant="outline" className="h-20 px-12 text-2xl font-black uppercase italic tracking-tighter rounded-none border-2 border-primary-foreground text-primary-foreground hover:bg-primary-foreground hover:text-primary transition-colors">
+                Book AI Ops Call
+              </Button>
+            </div>
           </div>
         </div>
+        
+        {/* Background Wash */}
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-[30rem] font-black text-black/5 pointer-events-none italic uppercase">RYZE</div>
       </section>
     </div>
   );
 }
+
