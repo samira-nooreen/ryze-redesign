@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import "./globals.css";
-import { Navbar } from "@/components/layout/navbar";
+import { SiteHeader } from "@/components/layout/site-header";
 import { Footer } from "@/components/layout/footer";
 import VisualEditsMessenger from "../visual-edits/VisualEditsMessenger";
 import ErrorReporter from "@/components/ErrorReporter";
@@ -36,7 +36,7 @@ export default function RootLayout({
           data-debug="true"
           data-custom-data='{"appName": "Ryze AI", "version": "1.0.0"}'
         />
-        <Navbar />
+        <SiteHeader />
         <main className="flex-grow pt-16">
           {children}
         </main>
