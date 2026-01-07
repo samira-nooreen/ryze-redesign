@@ -36,7 +36,7 @@ export default function RootLayout({
           data-debug="true"
           data-custom-data='{"appName": "Ryze AI", "version": "1.0.0"}'
         />
-        <SiteHeader />
+        <Navbar />
         <main className="flex-grow pt-16">
           {children}
         </main>
