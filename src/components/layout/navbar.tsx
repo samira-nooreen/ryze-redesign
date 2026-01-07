@@ -57,28 +57,28 @@ export function Navbar() {
         </div>
       </div>
 
-      {/* Mobile Menu */}
-      {isOpen && (
-        <motion.div
-          initial={{ opacity: 0, x: 20 }}
-          animate={{ opacity: 1, x: 0 }}
-          className="fixed inset-0 top-20 bg-background z-40 p-8 flex flex-col gap-8"
-        >
-          {navLinks.map((link) => (
-            <Link
-              key={link.name}
-              href={link.href}
-              onClick={() => setIsOpen(false)}
-              className="text-5xl font-display font-black uppercase italic tracking-tighter text-foreground"
-            >
-              {link.name}
-            </Link>
-          ))}
-          <Button size="lg" className="mt-auto h-20 text-2xl rounded-none font-black uppercase italic tracking-tighter" onClick={() => setIsOpen(false)}>
-            Book a Demo
-          </Button>
-        </motion.div>
-      )}
+        {/* Mobile Menu */}
+        {isOpen && (
+          <motion.div
+            initial={{ opacity: 0, x: 20 }}
+            animate={{ opacity: 1, x: 0 }}
+            className="fixed inset-0 top-20 bg-background z-40 p-8 flex flex-col gap-8"
+          >
+            {navLinks.map((link) => (
+              <Link
+                key={link.name}
+                href={link.href}
+                onClick={() => setIsOpen(false)}
+                className="text-4xl font-display font-bold text-foreground"
+              >
+                {link.name}
+              </Link>
+            ))}
+            <Button size="lg" className="mt-auto h-16 text-xl rounded-full font-semibold" onClick={() => setIsOpen(false)}>
+              Book a Demo
+            </Button>
+          </motion.div>
+        )}
     </nav>
   );
 }
