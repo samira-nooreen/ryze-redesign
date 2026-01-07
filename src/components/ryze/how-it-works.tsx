@@ -1,7 +1,11 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Link2, Search, Cpu, Rocket, Zap } from "lucide-react";
+import { Link2 } from "lucide-react";
+import { Search } from "lucide-react";
+import { Cpu } from "lucide-react";
+import { Rocket } from "lucide-react";
+import { Zap } from "lucide-react";
 
 export function HowItWorks() {
   const steps = [
