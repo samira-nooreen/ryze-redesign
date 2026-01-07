@@ -194,7 +194,4 @@ export default function FeaturesPage() {
         </section>
       </div>
     );
-  }
-
-  );
 }
