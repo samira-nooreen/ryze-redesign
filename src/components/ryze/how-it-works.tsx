@@ -1,66 +1,73 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { CheckCircle2, Link as LinkIcon, Settings, BarChart } from "lucide-react";
+import { Link2, Search, Cpu, Rocket, Zap } from "lucide-react";
 
 export function HowItWorks() {
   const steps = [
     {
-      title: "Connect Accounts",
-      description: "Securely link your Google and Meta ad accounts in seconds.",
-      icon: LinkIcon,
+      title: "Sync Assets",
+      description: "Link your Google & Meta accounts. Our secure bridge pulls 2 years of historical data in seconds.",
+      icon: Link2,
     },
     {
-      title: "Initial Audit",
-      description: "Our AI scans your historical data to identify wasted spend and growth opportunities.",
-      icon: CheckCircle2,
+      title: "Deep Scan",
+      description: "Our AI identifies 'Leakage Points'—keywords and placements where you're wasting budget today.",
+      icon: Search,
     },
     {
-      title: "Autonomous Setup",
-      description: "Ryze sets up campaigns and creative experiments based on your goals.",
-      icon: Settings,
+      title: "Deploy Agent",
+      description: "Activate your dedicated AI agent. It starts testing thousands of bid and creative variations.",
+      icon: Cpu,
     },
     {
-      title: "Scale & Ryze",
-      description: "Sit back as Ryze continuously optimizes your accounts 24/7 for maximum ROI.",
-      icon: BarChart,
+      title: "Scale Vertically",
+      description: "Once ROI targets are hit, Ryze automatically scales your budget to capture all available market share.",
+      icon: Rocket,
     },
   ];
 
   return (
-    <section id="how-it-works" className="py-24 px-4 sm:px-6 lg:px-8">
-      <div className="mx-auto max-w-7xl">
-        <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-5xl font-bold mb-4">How it Works</h2>
-          <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
-            Get started in minutes and see results in days. No complex setup required.
-          </p>
+    <section id="how-it-works" className="py-32 px-6 lg:px-12 bg-secondary/30 relative">
+      <div className="mx-auto max-w-[1400px]">
+        <div className="mb-24">
+          <div className="flex items-center gap-4 mb-6">
+            <Zap className="h-6 w-6 text-primary fill-current" />
+            <span className="text-sm font-black uppercase tracking-[0.2em]">The Pipeline</span>
+          </div>
+          <h2 className="text-5xl md:text-7xl font-black uppercase italic tracking-tighter leading-none">
+            From Audit <br />
+            To <span className="text-primary">Autonomy</span>
+          </h2>
         </div>
 
-        <div className="relative">
-          {/* Connector Line (Desktop) */}
-          <div className="hidden lg:block absolute top-1/2 left-0 right-0 h-0.5 bg-border -translate-y-1/2 z-0" />
-          
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 relative z-10">
-            {steps.map((step, i) => (
-              <motion.div
-                key={i}
-                initial={{ opacity: 0, scale: 0.9 }}
-                whileInView={{ opacity: 1, scale: 1 }}
-                viewport={{ once: true }}
-                transition={{ delay: i * 0.2 }}
-                className="flex flex-col items-center text-center group"
-              >
-                <div className="h-16 w-16 rounded-full bg-primary text-primary-foreground flex items-center justify-center mb-6 ring-8 ring-background group-hover:scale-110 transition-transform">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-px bg-border border border-border">
+          {steps.map((step, i) => (
+            <motion.div
+              key={i}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: i * 0.1 }}
+              className="bg-background p-12 relative group overflow-hidden"
+            >
+              <div className="absolute top-0 right-0 p-8 text-8xl font-black text-foreground/5 italic group-hover:text-primary/10 transition-colors">
+                {i + 1}
+              </div>
+              
+              <div className="relative z-10">
+                <div className="h-14 w-14 bg-primary text-primary-foreground flex items-center justify-center mb-12">
                   <step.icon className="h-8 w-8" />
                 </div>
-                <h3 className="text-xl font-bold mb-3">{step.title}</h3>
-                <p className="text-muted-foreground">
+                <h3 className="text-3xl font-black uppercase italic tracking-tight mb-6">
+                  {step.title}
+                </h3>
+                <p className="text-muted-foreground font-medium leading-relaxed">
                   {step.description}
                 </p>
-              </motion.div>
-            ))}
-          </div>
+              </div>
+            </motion.div>
+          ))}
         </div>
       </div>
     </section>
