@@ -10,6 +10,7 @@ import {
 } from "@/components/ui/accordion";
 import { Button } from "@/components/ui/button";
 import { ArrowUpRight, HelpCircle, Zap } from "lucide-react";
+import { BookDemoModal } from "@/components/ryze/book-demo-modal";
 
 export default function PricingPage() {
   const faqs = [
