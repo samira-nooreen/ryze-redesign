@@ -1,7 +1,7 @@
 "use client";
 
 import { Button } from "@/components/ui/button";
-import { Check } from "lucide-react";
+import { Check, Zap } from "lucide-react";
 import { motion } from "framer-motion";
 
 export function PricingCards() {
@@ -9,27 +9,25 @@ export function PricingCards() {
     {
       name: "Starter",
       price: "$499",
-      description: "Perfect for small businesses looking to optimize their first $5k in ad spend.",
+      description: "Perfect for small businesses looking to optimize their first $5k.",
       features: [
         "Up to $5,000 Monthly Spend",
         "Google & Meta Audit",
         "24/7 Bid Management",
-        "Weekly Performance Reports",
-        "Email Support",
+        "Weekly Reports",
       ],
-      cta: "Start Free Trial",
+      cta: "Start Trial",
       popular: false,
     },
     {
       name: "Growth",
       price: "$1,499",
-      description: "Ideal for growing teams managing up to $25k in monthly ad spend.",
+      description: "Ideal for growing teams managing up to $25k monthly.",
       features: [
         "Up to $25,000 Monthly Spend",
-        "AI Creative Generation",
+        "AI Creative Gen",
         "Wasted Spend Guard",
-        "Perplexity & ChatGPT Beta",
-        "Priority Support",
+        "ChatGPT & Perplexity Beta",
       ],
       cta: "Get Started",
       popular: true,
@@ -43,7 +41,6 @@ export function PricingCards() {
         "Full Multi-Channel Suite",
         "Dedicated Account Manager",
         "Custom Integrations",
-        "SLA & Premium Support",
       ],
       cta: "Contact Sales",
       popular: false,
@@ -51,12 +48,23 @@ export function PricingCards() {
   ];
 
   return (
-    <section id="pricing" className="py-24 px-4 sm:px-6 lg:px-8 bg-muted/30">
-      <div className="mx-auto max-w-7xl">
-        <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-5xl font-bold mb-4">Simple, Transparent Pricing</h2>
-          <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
-            Choose the plan that fits your growth stage. No hidden fees.
+    <section id="pricing" className="py-32 px-6 lg:px-12 bg-secondary/30 relative overflow-hidden">
+      <div className="absolute top-0 left-0 w-full h-px bg-border" />
+      
+      <div className="mx-auto max-w-[1400px]">
+        <div className="flex flex-col lg:flex-row justify-between items-end gap-12 mb-24">
+          <div className="max-w-2xl">
+            <div className="flex items-center gap-4 mb-6">
+              <Zap className="h-6 w-6 text-primary fill-current" />
+              <span className="text-sm font-black uppercase tracking-[0.2em]">The Tiers</span>
+            </div>
+            <h2 className="text-5xl md:text-7xl font-black uppercase italic tracking-tighter leading-none">
+              Simple <br />
+              <span className="text-primary">Transparent</span>
+            </h2>
+          </div>
+          <p className="text-xl text-muted-foreground max-w-md font-medium leading-tight">
+            No percentages of spend. Just flat fees for autonomous performance.
           </p>
         </div>
 
@@ -64,41 +72,44 @@ export function PricingCards() {
           {tiers.map((tier, i) => (
             <motion.div
               key={i}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
+              initial={{ opacity: 0, scale: 0.95 }}
+              whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true }}
               transition={{ delay: i * 0.1 }}
-              className={`relative flex flex-col p-8 rounded-3xl border ${
-                tier.popular ? "border-primary bg-primary/5 ring-1 ring-primary" : "border-border bg-card"
+              className={`relative flex flex-col p-12 border-4 ${
+                tier.popular ? "border-primary bg-primary/5" : "border-foreground bg-background"
               }`}
             >
               {tier.popular && (
-                <span className="absolute top-0 right-8 -translate-y-1/2 bg-primary text-primary-foreground text-xs font-bold uppercase tracking-wider px-3 py-1 rounded-full">
-                  Most Popular
-                </span>
-              )}
-              <div className="mb-8">
-                <h3 className="text-2xl font-bold mb-2">{tier.name}</h3>
-                <div className="flex items-baseline gap-1 mb-4">
-                  <span className="text-4xl font-bold">{tier.price}</span>
-                  {tier.price !== "Custom" && <span className="text-muted-foreground">/mo</span>}
+                <div className="absolute top-0 right-12 -translate-y-1/2 bg-primary text-primary-foreground text-[10px] font-black uppercase tracking-[0.3em] px-4 py-2 italic">
+                  Recommended
                 </div>
-                <p className="text-muted-foreground text-sm leading-relaxed">
+              )}
+              
+              <div className="mb-12">
+                <h3 className="text-3xl font-black uppercase italic tracking-tight mb-4">{tier.name}</h3>
+                <div className="flex items-baseline gap-2 mb-6">
+                  <span className="text-6xl font-black italic tracking-tighter">{tier.price}</span>
+                  {tier.price !== "Custom" && <span className="text-sm font-bold uppercase text-muted-foreground">/mo</span>}
+                </div>
+                <p className="text-muted-foreground font-medium leading-tight">
                   {tier.description}
                 </p>
               </div>
-              <ul className="space-y-4 mb-8 flex-grow">
+
+              <ul className="space-y-4 mb-12 flex-grow">
                 {tier.features.map((feature, j) => (
-                  <li key={j} className="flex items-start gap-3 text-sm">
-                    <Check className="h-5 w-5 text-primary shrink-0" />
+                  <li key={j} className="flex items-start gap-3 text-sm font-bold uppercase tracking-wide">
+                    <Check className={`h-5 w-5 shrink-0 ${tier.popular ? 'text-primary' : 'text-foreground'}`} />
                     <span>{feature}</span>
                   </li>
                 ))}
               </ul>
+
               <Button
                 variant={tier.popular ? "default" : "outline"}
-                className={`w-full rounded-full h-12 text-base font-semibold ${
-                  tier.popular ? "" : "hover:bg-primary hover:text-primary-foreground transition-colors"
+                className={`h-16 text-xl font-black uppercase italic tracking-tighter rounded-none border-2 ${
+                  tier.popular ? "bg-primary text-primary-foreground hover:bg-primary/90" : "border-foreground hover:bg-foreground hover:text-background"
                 }`}
               >
                 {tier.cta}
