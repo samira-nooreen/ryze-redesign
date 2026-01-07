@@ -258,7 +258,8 @@ function ChartLegendContent({
   verticalAlign = "bottom",
   nameKey,
 }: React.ComponentProps<"div"> &
-  Pick<RechartsPrimitive.LegendProps, "payload" | "verticalAlign"> & {
+  Pick<RechartsPrimitive.LegendProps, "verticalAlign"> & {
+    payload?: any[]
     hideIcon?: boolean
     nameKey?: string
   }) {
@@ -276,7 +277,7 @@ function ChartLegendContent({
         className
       )}
     >
-      {payload.map((item) => {
+      {(payload as any[]).map((item) => {
         const key = `${nameKey || item.dataKey || "value"}`
         const itemConfig = getPayloadConfigFromPayload(config, item, key)
 
