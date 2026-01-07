@@ -14,6 +14,7 @@ import {
   Cpu
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { BookDemoModal } from "@/components/ryze/book-demo-modal";
 
 export default function FeaturesPage() {
     const deepFeatures = [
