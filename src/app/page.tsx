@@ -4,7 +4,8 @@ import { HowItWorks } from "@/components/ryze/how-it-works";
 import { Testimonials } from "@/components/ryze/testimonials";
 import { PricingCards } from "@/components/ryze/pricing-cards";
 import { Button } from "@/components/ui/button";
-import { ArrowUpRight, Zap } from "lucide-react";
+import { ArrowUpRight } from "lucide-react";
+import { Zap } from "lucide-react";
 
 export default function Home() {
   return (
