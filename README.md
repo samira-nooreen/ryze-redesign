@@ -1,7 +1,7 @@
 # Ryze Website Redesign
 
 ## Live Demo
-🌐 [View Live Site](https://3000-25517a7e-8b35-4b3f-b6b7-f58734dbddd6.orchids.cloud/)
+🌐 [View Live Site](https://ryze-website-redesign-project.vercel.app/)
 
 A modern, responsive redesign of **Get-Ryze.ai** focused on improving UI/UX, visual hierarchy, and clarity. The project emphasizes modular sections, clear CTAs, and mobile-first design to communicate Ryze’s value proposition effectively.
 
