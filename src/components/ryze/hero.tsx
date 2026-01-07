@@ -44,20 +44,25 @@ export function Hero() {
                 </h1>
               </motion.div>
 
-              <motion.div
-                initial={{ opacity: 0, x: -20 }}
-                animate={{ opacity: 1, x: 0 }}
-                transition={{ duration: 0.8, delay: 0.2 }}
-                className="flex flex-wrap gap-4"
-              >
-                <Button size="lg" className="h-14 px-8 text-lg font-semibold rounded-full group">
-                  Start Free Audit
-                  <ArrowUpRight className="ml-2 h-5 w-5 group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
-                </Button>
-                <Button size="lg" variant="outline" className="h-14 px-8 text-lg font-semibold rounded-full border-2 transition-colors">
-                  View Demo
-                </Button>
-              </motion.div>
+                <motion.div
+                  initial={{ opacity: 0, x: -20 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  transition={{ duration: 0.8, delay: 0.2 }}
+                  className="flex flex-wrap gap-4"
+                >
+                  <BookDemoModal>
+                    <Button size="lg" className="h-14 px-8 text-lg font-semibold rounded-full group">
+                      Start Free Audit
+                      <ArrowUpRight className="ml-2 h-5 w-5 group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
+                    </Button>
+                  </BookDemoModal>
+                  <BookDemoModal>
+                    <Button size="lg" variant="outline" className="h-14 px-8 text-lg font-semibold rounded-full border-2 transition-colors">
+                      View Demo
+                    </Button>
+                  </BookDemoModal>
+                </motion.div>
+
             </div>
 
           <div className="lg:col-span-4 lg:mb-12">
