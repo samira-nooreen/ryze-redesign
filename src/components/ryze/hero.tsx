@@ -98,15 +98,15 @@ export function Hero() {
         className="absolute bottom-20 right-[-10%] hidden xl:block w-[400px] h-[300px] border-2 border-border bg-background/80 backdrop-blur-xl p-8"
       >
         <div className="flex justify-between items-start mb-12">
-          <div className="p-3 bg-primary text-primary-foreground">
-            <Zap className="h-8 w-8 fill-current" />
+            <div className="p-3 bg-primary text-primary-foreground rounded-lg">
+              <Zap className="h-8 w-8 fill-current" />
+            </div>
+            <span className="text-[10px] font-bold uppercase tracking-[0.2em] text-muted-foreground">Live Sync</span>
           </div>
-          <span className="text-xs font-black uppercase tracking-widest opacity-50">Live Sync</span>
-        </div>
-        <div className="space-y-2">
-          <span className="text-sm font-bold uppercase text-muted-foreground">Managed Spend</span>
-          <div className="text-6xl font-black italic tracking-tighter">$50M+</div>
-        </div>
+          <div className="space-y-1">
+            <span className="text-xs font-semibold uppercase tracking-wider text-muted-foreground">Managed Spend</span>
+            <div className="text-5xl font-bold tracking-tight">$50M+</div>
+          </div>
       </motion.div>
     </section>
   );
