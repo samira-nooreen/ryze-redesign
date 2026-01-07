@@ -3,12 +3,10 @@
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { motion } from "framer-motion";
-import { Menu } from "lucide-react";
-import { X } from "lucide-react";
-import { Zap } from "lucide-react";
+import { Menu, X, Zap } from "lucide-react";
 import { useState } from "react";
 
-// Muted navbar
+// Muted navbar - HMR Cache Clear
 export function SiteHeader() {
   const [isOpen, setIsOpen] = useState(false);
 
