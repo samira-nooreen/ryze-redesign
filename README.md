@@ -1,29 +1,38 @@
-Ryze Website Redesign
-Live Demo
-🌐 View Live Site-https://3000-25517a7e-8b35-4b3f-b6b7-f58734dbddd6.orchids.cloud/
+# Ryze Website Redesign
 
-A modern, responsive redesign of Get-Ryze.ai focused on improving UI/UX, visual hierarchy, and clarity. The project emphasizes modular sections, clear CTAs, and mobile-first design to communicate Ryze’s value proposition effectively.
+## Live Demo
+🌐 [View Live Site](https://3000-25517a7e-8b35-4b3f-b6b7-f58734dbddd6.orchids.cloud/)
 
-Features & Pages
-Home – Hero section, features, testimonials, CTAs
-Features – Detailed breakdown of product capabilities
-Pricing – Clean and user-friendly pricing layout
+A modern, responsive redesign of **Get-Ryze.ai** focused on improving UI/UX, visual hierarchy, and clarity. The project emphasizes modular sections, clear CTAs, and mobile-first design to communicate Ryze’s value proposition effectively.
 
-Tech Stack
-Next.js & React
-Tailwind CSS
-Bun
-Deployed on Orchids / Vercel-like platform
+---
 
-Key Design Decisions
-Modular, reusable components for scalability
-Strong visual hierarchy & readable typography
-Mobile-first responsive layout
+## Features & Pages
+- **Home** – Hero section, features, testimonials, CTAs  
+- **Features** – Detailed breakdown of product capabilities  
+- **Pricing** – Clean and user-friendly pricing layout  
 
-Clear, conversion-focused CTAs (“Start Free Audit”, “View Demo”)
+---
 
-Accessible color contrast and smooth interactive states
+## Tech Stack
+- **Next.js & React**  
+- **Tailwind CSS**  
+- **Bun**  
+- **Deployed on Orchids** (Vercel-like platform)  
 
-Run Locally
+---
+
+## Key Design Decisions
+- Modular, reusable components for scalability  
+- Strong visual hierarchy & readable typography  
+- Mobile-first responsive layout  
+- Clear, conversion-focused CTAs (`Start Free Audit`, `View Demo`)  
+- Accessible color contrast and smooth interactive states  
+
+---
+
+## Run Locally
+```bash
 npm install
 npm run dev
+
