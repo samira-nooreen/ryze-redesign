@@ -36,10 +36,10 @@ export function Hero() {
                   </span>
                 </div>
                 
-                <h1 className="text-[clamp(3rem,8vw,5.5rem)] leading-[1.1] font-bold tracking-tight mb-8">
-                  Scale Your <br />
-                  <span className="text-primary">Growth</span> <br />
-                  with Intelligence.
+                <h1 className="text-[clamp(3.5rem,8vw,6rem)] leading-[1] font-display font-extrabold tracking-tight mb-8">
+                  Autonomous <br />
+                  <span className="text-muted-foreground/40">Performance</span> <br />
+                  Marketing.
                 </h1>
               </motion.div>
 
