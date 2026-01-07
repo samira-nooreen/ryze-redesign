@@ -48,22 +48,23 @@ export function PricingCards() {
   ];
 
   return (
-    <section id="pricing" className="py-32 px-6 lg:px-12 bg-secondary/30 relative overflow-hidden">
+    <section id="pricing" className="py-32 px-6 lg:px-12 bg-muted/30 relative overflow-hidden">
       <div className="absolute top-0 left-0 w-full h-px bg-border" />
       
       <div className="mx-auto max-w-[1400px]">
         <div className="flex flex-col lg:flex-row justify-between items-end gap-12 mb-24">
           <div className="max-w-2xl">
             <div className="flex items-center gap-4 mb-6">
-              <Zap className="h-6 w-6 text-primary fill-current" />
-              <span className="text-sm font-black uppercase tracking-[0.2em]">The Tiers</span>
+              <div className="h-10 w-10 flex items-center justify-center rounded-xl bg-primary/10 text-primary">
+                <Zap className="h-6 w-6 fill-current" />
+              </div>
+              <span className="text-sm font-semibold uppercase tracking-[0.1em] text-primary">Pricing</span>
             </div>
-            <h2 className="text-5xl md:text-7xl font-black uppercase italic tracking-tighter leading-none">
-              Simple <br />
-              <span className="text-primary">Transparent</span>
+            <h2 className="text-4xl md:text-6xl font-bold tracking-tight leading-none">
+              Simple <span className="text-primary">Flat Fees</span>
             </h2>
           </div>
-          <p className="text-xl text-muted-foreground max-w-md font-medium leading-tight">
+          <p className="text-lg text-muted-foreground max-w-md font-medium leading-relaxed">
             No percentages of spend. Just flat fees for autonomous performance.
           </p>
         </div>
@@ -72,35 +73,35 @@ export function PricingCards() {
           {tiers.map((tier, i) => (
             <motion.div
               key={i}
-              initial={{ opacity: 0, scale: 0.95 }}
-              whileInView={{ opacity: 1, scale: 1 }}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: i * 0.1 }}
-              className={`relative flex flex-col p-12 border-4 ${
-                tier.popular ? "border-primary bg-primary/5" : "border-foreground bg-background"
+              className={`relative flex flex-col p-10 rounded-3xl border-2 transition-all duration-300 ${
+                tier.popular ? "border-primary bg-primary/5 shadow-2xl shadow-primary/10" : "border-border bg-background hover:border-primary/50"
               }`}
             >
               {tier.popular && (
-                <div className="absolute top-0 right-12 -translate-y-1/2 bg-primary text-primary-foreground text-[10px] font-black uppercase tracking-[0.3em] px-4 py-2 italic">
+                <div className="absolute top-0 right-10 -translate-y-1/2 bg-primary text-primary-foreground text-[10px] font-bold uppercase tracking-[0.2em] px-4 py-1.5 rounded-full">
                   Recommended
                 </div>
               )}
               
-              <div className="mb-12">
-                <h3 className="text-3xl font-black uppercase italic tracking-tight mb-4">{tier.name}</h3>
+              <div className="mb-10">
+                <h3 className="text-xl font-bold tracking-tight mb-4">{tier.name}</h3>
                 <div className="flex items-baseline gap-2 mb-6">
-                  <span className="text-6xl font-black italic tracking-tighter">{tier.price}</span>
-                  {tier.price !== "Custom" && <span className="text-sm font-bold uppercase text-muted-foreground">/mo</span>}
+                  <span className="text-5xl font-bold tracking-tight">{tier.price}</span>
+                  {tier.price !== "Custom" && <span className="text-sm font-medium text-muted-foreground">/mo</span>}
                 </div>
-                <p className="text-muted-foreground font-medium leading-tight">
+                <p className="text-sm text-muted-foreground font-medium leading-relaxed">
                   {tier.description}
                 </p>
               </div>
 
-              <ul className="space-y-4 mb-12 flex-grow">
+              <ul className="space-y-4 mb-10 flex-grow">
                 {tier.features.map((feature, j) => (
-                  <li key={j} className="flex items-start gap-3 text-sm font-bold uppercase tracking-wide">
-                    <Check className={`h-5 w-5 shrink-0 ${tier.popular ? 'text-primary' : 'text-foreground'}`} />
+                  <li key={j} className="flex items-start gap-3 text-sm font-medium">
+                    <Check className={`h-5 w-5 shrink-0 ${tier.popular ? 'text-primary' : 'text-primary'}`} />
                     <span>{feature}</span>
                   </li>
                 ))}
@@ -108,8 +109,8 @@ export function PricingCards() {
 
               <Button
                 variant={tier.popular ? "default" : "outline"}
-                className={`h-16 text-xl font-black uppercase italic tracking-tighter rounded-none border-2 ${
-                  tier.popular ? "bg-primary text-primary-foreground hover:bg-primary/90" : "border-foreground hover:bg-foreground hover:text-background"
+                className={`h-14 text-lg font-semibold rounded-full ${
+                  tier.popular ? "" : "border-2"
                 }`}
               >
                 {tier.cta}
