@@ -5,6 +5,7 @@ import { Button } from "@/components/ui/button";
 import { motion } from "framer-motion";
 import { Menu, X, Zap } from "lucide-react";
 import { useState } from "react";
+import { BookDemoModal } from "@/components/ryze/book-demo-modal";
 
 // Muted navbar - HMR Cache Clear
 export function SiteHeader() {
@@ -42,9 +43,11 @@ export function SiteHeader() {
                   </Link>
                 ))}
               </div>
-              <Button className="rounded-full px-6 font-semibold transition-all">
-                Book a Demo
-              </Button>
+              <BookDemoModal>
+                <Button className="rounded-full px-6 font-semibold transition-all">
+                  Book a Demo
+                </Button>
+              </BookDemoModal>
             </div>
 
           <div className="flex md:hidden">
@@ -75,9 +78,11 @@ export function SiteHeader() {
                 {link.name}
               </Link>
             ))}
-            <Button size="lg" className="mt-auto h-16 text-xl rounded-full font-semibold" onClick={() => setIsOpen(false)}>
-              Book a Demo
-            </Button>
+            <BookDemoModal>
+              <Button size="lg" className="mt-auto h-16 text-xl rounded-full font-semibold" onClick={() => setIsOpen(false)}>
+                Book a Demo
+              </Button>
+            </BookDemoModal>
           </motion.div>
         )}
     </nav>
