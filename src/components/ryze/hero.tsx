@@ -23,41 +23,41 @@ export function Hero() {
       
       <div className="mx-auto max-w-[1400px] px-6 lg:px-12 w-full">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-end">
-          <div className="lg:col-span-8">
-            <motion.div
-              initial={{ opacity: 0, y: 50 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
-            >
-              <div className="flex items-center gap-4 mb-8">
-                <div className="h-px w-12 bg-primary" />
-                <span className="text-xs font-black uppercase tracking-[0.3em] text-primary">
-                  Autonomous Ad Operations
-                </span>
-              </div>
-              
-              <h1 className="text-[clamp(3rem,8vw,7.5rem)] leading-[0.85] font-black uppercase italic tracking-tighter mb-12">
-                Ryze <br />
-                <span className="text-primary">Above</span> <br />
-                The Noise.
-              </h1>
-            </motion.div>
+            <div className="lg:col-span-8">
+              <motion.div
+                initial={{ opacity: 0, y: 50 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
+              >
+                <div className="flex items-center gap-4 mb-8">
+                  <div className="h-px w-12 bg-primary" />
+                  <span className="text-xs font-semibold uppercase tracking-[0.2em] text-primary">
+                    Autonomous Ad Operations
+                  </span>
+                </div>
+                
+                <h1 className="text-[clamp(3rem,8vw,5.5rem)] leading-[1.1] font-bold tracking-tight mb-8">
+                  Scale Your <br />
+                  <span className="text-primary">Growth</span> <br />
+                  with Intelligence.
+                </h1>
+              </motion.div>
 
-            <motion.div
-              initial={{ opacity: 0, x: -20 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.8, delay: 0.2 }}
-              className="flex flex-wrap gap-6"
-            >
-              <Button size="lg" className="h-20 px-12 text-2xl font-black uppercase italic tracking-tighter rounded-none group">
-                Start Audit
-                <ArrowUpRight className="ml-2 h-6 w-6 group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
-              </Button>
-              <Button size="lg" variant="outline" className="h-20 px-12 text-2xl font-black uppercase italic tracking-tighter rounded-none border-2 hover:bg-foreground hover:text-background transition-colors">
-                View Demo
-              </Button>
-            </motion.div>
-          </div>
+              <motion.div
+                initial={{ opacity: 0, x: -20 }}
+                animate={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.8, delay: 0.2 }}
+                className="flex flex-wrap gap-4"
+              >
+                <Button size="lg" className="h-14 px-8 text-lg font-semibold rounded-full group">
+                  Start Free Audit
+                  <ArrowUpRight className="ml-2 h-5 w-5 group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
+                </Button>
+                <Button size="lg" variant="outline" className="h-14 px-8 text-lg font-semibold rounded-full border-2 transition-colors">
+                  View Demo
+                </Button>
+              </motion.div>
+            </div>
 
           <div className="lg:col-span-4 lg:mb-12">
             <motion.p 
