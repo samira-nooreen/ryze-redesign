@@ -1,75 +1,95 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Search, Sparkles, BarChart3, AlertCircle, RefreshCw, Target } from "lucide-react";
+import { Search, Sparkles, BarChart3, AlertCircle, RefreshCw, Target, Zap } from "lucide-react";
 
 export function Features() {
   const features = [
     {
-      title: "Account Audits",
-      description: "Instant audit of your Google and Meta accounts to identify quick wins and structural issues.",
-      icon: Search,
-      color: "bg-blue-500/10 text-blue-500",
-    },
-    {
-      title: "AI Creative Generation",
-      description: "Generate high-performing ad creatives and copy tailored to each platform's unique audience.",
-      icon: Sparkles,
-      color: "bg-purple-500/10 text-purple-500",
-    },
-    {
-      title: "Wasted Spend Identification",
-      description: "Automatically identify and pause search terms and placements that are draining your budget.",
-      icon: AlertCircle,
-      color: "bg-red-500/10 text-red-500",
-    },
-    {
-      title: "Performance Optimization",
-      description: "24/7 autonomous adjustments to bids, budgets, and targeting based on real-time data.",
-      icon: RefreshCw,
-      color: "bg-green-500/10 text-green-500",
-    },
-    {
-      title: "Advanced Reporting",
-      description: "Clear, actionable reports that show exactly how Ryze is improving your ROI.",
-      icon: BarChart3,
-      color: "bg-yellow-500/10 text-yellow-500",
-    },
-    {
-      title: "AI Search Ads",
-      description: "Be the first to dominate ad surfaces on ChatGPT and Perplexity as they evolve.",
+      title: "AI Search Dominance",
+      description: "Be the first to capture intent on ChatGPT and Perplexity. Our AI adapts your ads for the conversational web.",
       icon: Target,
-      color: "bg-indigo-500/10 text-indigo-500",
+      className: "md:col-span-8 md:row-span-2 bg-primary text-primary-foreground",
+    },
+    {
+      title: "Account Audits",
+      description: "Instant, deep-dive audits for Google and Meta.",
+      icon: Search,
+      className: "md:col-span-4 bg-secondary",
+    },
+    {
+      title: "Creative Gen",
+      description: "High-performing copy tailored to your brand voice.",
+      icon: Sparkles,
+      className: "md:col-span-4 bg-background border-2 border-border",
+    },
+    {
+      title: "Waste Prevention",
+      description: "Stop bleeding budget on low-intent search terms automatically.",
+      icon: AlertCircle,
+      className: "md:col-span-4 bg-secondary",
+    },
+    {
+      title: "24/7 Ops",
+      description: "Autonomous adjustments while you sleep.",
+      icon: RefreshCw,
+      className: "md:col-span-4 bg-background border-2 border-border",
+    },
+    {
+      title: "ROI Reporting",
+      description: "Clear, aggressive focus on your bottom line.",
+      icon: BarChart3,
+      className: "md:col-span-4 bg-secondary",
     },
   ];
 
   return (
-    <section id="features" className="py-24 px-4 sm:px-6 lg:px-8 bg-muted/30">
-      <div className="mx-auto max-w-7xl">
-        <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-5xl font-bold mb-4">Autonomous Marketing <br /> Powerhouse</h2>
-          <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
-            Everything you need to scale your advertising across the modern web, powered by purpose-built AI.
+    <section id="features" className="py-32 px-6 lg:px-12 bg-background relative overflow-hidden">
+      <div className="absolute top-0 left-0 w-full h-px bg-border" />
+      
+      <div className="mx-auto max-w-[1400px]">
+        <div className="flex flex-col lg:flex-row justify-between items-end gap-12 mb-24">
+          <div className="max-w-2xl">
+            <div className="flex items-center gap-4 mb-6">
+              <Zap className="h-6 w-6 text-primary fill-current" />
+              <span className="text-sm font-black uppercase tracking-[0.2em]">The Toolkit</span>
+            </div>
+            <h2 className="text-5xl md:text-7xl font-black uppercase italic tracking-tighter leading-none">
+              Built for <br />
+              <span className="text-primary">Performance</span>
+            </h2>
+          </div>
+          <p className="text-xl text-muted-foreground max-w-md font-medium leading-tight">
+            Traditional agencies are too slow. Ryze is the autonomous layer that outpaces the market.
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-12 gap-4 auto-rows-[240px]">
           {features.map((feature, i) => (
             <motion.div
               key={i}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
+              initial={{ opacity: 0, scale: 0.95 }}
+              whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true }}
-              transition={{ delay: i * 0.1 }}
-              className="p-8 rounded-2xl border border-border bg-card hover:border-primary/50 transition-colors group"
+              transition={{ delay: i * 0.05 }}
+              className={`relative p-8 overflow-hidden group ${feature.className}`}
             >
-              <div className={`h-12 w-12 rounded-xl ${feature.color} flex items-center justify-center mb-6 group-hover:scale-110 transition-transform`}>
-                <feature.icon className="h-6 w-6" />
+              <div className="flex flex-col h-full justify-between relative z-10">
+                <feature.icon className={`h-10 w-10 ${feature.className.includes('bg-primary') ? 'text-primary-foreground' : 'text-primary'}`} />
+                <div>
+                  <h3 className={`text-2xl font-black uppercase italic tracking-tight mb-2 ${feature.className.includes('bg-primary') ? 'text-primary-foreground' : ''}`}>
+                    {feature.title}
+                  </h3>
+                  <p className={`text-sm font-medium leading-tight ${feature.className.includes('bg-primary') ? 'text-primary-foreground/80' : 'text-muted-foreground'}`}>
+                    {feature.description}
+                  </p>
+                </div>
               </div>
-              <h3 className="text-xl font-bold mb-3">{feature.title}</h3>
-              <p className="text-muted-foreground leading-relaxed">
-                {feature.description}
-              </p>
+              
+              {/* Decorative detail */}
+              <div className="absolute top-4 right-4 text-[10px] font-black opacity-20 uppercase tracking-widest">
+                0{i + 1}
+              </div>
             </motion.div>
           ))}
         </div>
