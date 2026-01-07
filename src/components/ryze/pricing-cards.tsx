@@ -3,6 +3,7 @@
 import { Button } from "@/components/ui/button";
 import { Check, Zap } from "lucide-react";
 import { motion } from "framer-motion";
+import { BookDemoModal } from "./book-demo-modal";
 
 export function PricingCards() {
   const tiers = [
