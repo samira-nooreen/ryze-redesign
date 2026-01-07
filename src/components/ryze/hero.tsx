@@ -2,7 +2,12 @@
 
 import { Button } from "@/components/ui/button";
 import { motion, useScroll, useTransform } from "framer-motion";
-import { ArrowUpRight, Zap, Play, Globe, Shield, BarChart3 } from "lucide-react";
+import { ArrowUpRight } from "lucide-react";
+import { Zap } from "lucide-react";
+import { Play } from "lucide-react";
+import { Globe } from "lucide-react";
+import { Shield } from "lucide-react";
+import { BarChart3 } from "lucide-react";
 import { useRef } from "react";
 
 export function Hero() {
