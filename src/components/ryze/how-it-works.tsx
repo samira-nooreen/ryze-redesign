@@ -28,16 +28,16 @@ export function HowItWorks() {
   ];
 
   return (
-    <section id="how-it-works" className="py-32 px-6 lg:px-12 bg-muted/30 relative">
+    <section id="how-it-works" className="py-32 px-6 lg:px-12 bg-background relative border-t border-border">
       <div className="mx-auto max-w-[1400px]">
         <div className="mb-24 text-center">
           <div className="flex items-center justify-center gap-4 mb-6">
-            <div className="h-px w-8 bg-primary" />
-            <span className="text-sm font-semibold uppercase tracking-[0.1em] text-primary">The Process</span>
-            <div className="h-px w-8 bg-primary" />
+            <div className="h-px w-8 bg-border" />
+            <span className="text-xs font-semibold uppercase tracking-[0.1em] text-muted-foreground">The Process</span>
+            <div className="h-px w-8 bg-border" />
           </div>
           <h2 className="text-4xl md:text-6xl font-bold tracking-tight leading-none">
-            From Audit to <span className="text-primary">Autonomy</span>
+            From Audit to <span className="text-muted-foreground/40">Autonomy</span>
           </h2>
         </div>
 
@@ -49,15 +49,11 @@ export function HowItWorks() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: i * 0.1 }}
-              className="relative p-8 rounded-3xl bg-background border border-border group hover:border-primary/50 transition-all duration-300"
+              className="relative p-8 rounded-2xl bg-secondary/50 border border-border/50 group hover:border-foreground/20 transition-all duration-300"
             >
-              <div className="absolute top-4 right-6 text-6xl font-bold text-foreground/[0.03] group-hover:text-primary/[0.05] transition-colors">
-                0{i + 1}
-              </div>
-              
               <div className="relative z-10">
-                <div className="h-12 w-12 bg-primary/10 text-primary rounded-xl flex items-center justify-center mb-8 group-hover:bg-primary group-hover:text-primary-foreground transition-colors duration-300">
-                  <step.icon className="h-6 w-6" />
+                <div className="h-10 w-10 bg-background border border-border text-foreground rounded-xl flex items-center justify-center mb-8">
+                  <step.icon className="h-5 w-5" />
                 </div>
                 <h3 className="text-xl font-bold tracking-tight mb-4">
                   {step.title}
